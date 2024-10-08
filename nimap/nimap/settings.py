@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+     "user",
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # or 'django.db.backends.postgresql'
         'NAME': 'nimap',
         'USER': 'root',
-        'PASSWORD': ' ',
+        'PASSWORD': 'deepak',
         'HOST': 'localhost',
         'PORT': '3306',  # For MySQL, or '5432' for Postgres
     }
