@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import pymysql
+pymysql.install_as_MySQLdb()
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-     "user",
+    "register",
+    "login",
+
 ]
 
 MIDDLEWARE = [
@@ -55,7 +58,7 @@ ROOT_URLCONF = "nimap.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["template"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -75,15 +78,22 @@ WSGI_APPLICATION = "nimap.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-        'ENGINE': 'django.db.backends.mysql',  # or 'django.db.backends.postgresql'
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'nimap',
         'USER': 'root',
         'PASSWORD': 'deepak',
         'HOST': 'localhost',
-        'PORT': '3306',  # For MySQL, or '5432' for Postgres
+        'PORT': '3306',
+        'OPTIONS': {
+            'autocommit': True,
+            'charset': 'utf8mb4',
+            'init_command': "SET NAMES 'utf8mb4'",
+        },
     }
 }
+
+
 
 
 # Password validation
