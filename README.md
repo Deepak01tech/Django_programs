@@ -15,3 +15,14 @@ python manage.py startapp register
 1)python manage.py makemigrations
 2)python manage.py migrate
 3)python manage.py runserver
+
+Mysql database:-
+
+![alt text](<Screenshot (191).png>)
+![alt text](<Screenshot (192).png>)
+
+login page:
+![alt text](<Screenshot (195).png>)
+
+signup:
+![alt text](<Screenshot (196).png>)

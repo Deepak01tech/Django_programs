@@ -20,6 +20,7 @@ from register.views import regsiter
 from login.views import login
 
 urlpatterns = [
+    
     path("admin/", admin.site.urls),
     path("register/",regsiter),
     path("login/", login),
