@@ -1,0 +1,31 @@
+# Ignore virtual environments
+myenv/
+.myenv/
+venv/
+.venv/
+
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Django environment files
+.env
+
+# Database files
+db.sqlite3
+*.sqlite3
+
+# Logs
+*.log
+
+# Django migrations
+*.pyc
+
+# Static and media files (if applicable, uncomment if needed)
+# staticfiles/
+# media/
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
