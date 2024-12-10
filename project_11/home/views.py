@@ -1,17 +1,17 @@
 from rest_framework.response import Response
 # from rest_framework.decorators import api_view
-from .models import Students
-from .serializer import StudentsSerializer
+from .models import Student
+from .serializer import StudentSerializer
 from rest_framework.views import APIView
 
 # Create your views here.
-class StudentAPi(APIView):
+class StudentAPI(APIView):
     def get(self, request):
-        students_objs= Students.objects.all()
-        serializer = StudentsSerializer(students_objs, many=True)
+        students_objs= Student.objects.all()
+        serializer = StudentSerializer(students_objs, many=True)
         return Response({'status':200,"mesage":"hello",'payload':serializer.data})
     def post(self, request):
-        serializer = StudentsSerializer(data=request.data)
+        serializer = StudentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response({'status':200,"mesage":"Data inserted successfully",'payload':serializer.data})
@@ -20,6 +20,6 @@ class StudentAPi(APIView):
     def put(self, request, id):
         pass
     def patch(self, request):
-        student = Students.objects.get(id=request.data['id'])
+        student = Student.objects.get(id=request.data['id'])
         serializer=StudentSerializer(student,data=request.data)
 
