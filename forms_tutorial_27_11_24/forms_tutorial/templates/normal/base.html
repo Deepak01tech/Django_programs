@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <!-- Navbar Started -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">Admin Panel</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+
+          {% if user.is_authenticated %}
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Welcome,{{ user.first_name }}</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="userhome">UserHome</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="addemp">ADD Employee</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="getEmpDetails">Employee Details</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="signout">Logout</a>
+          </li>
+          {% else %}
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="signuppage">Sign Up</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="signinpage" tabindex="-1">Sign In</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" tabindex="-1" >Contact Us</a>
+      </li>
+      {%endif%}
+    </ul>
+  </div>
+</div>
+</nav>
+
+<!-- Navbar End -->
+
+
+{% block content%}
+
+{%endblock%}
+<!-- footer section -->
+<section class="footer bg-dark">
+    <div class="container text-center text-white py-2">
+        <p style="font-size: 20px; padding-top: 15px;">Copyright @ 2024 - Shreyansh</p>
+    </div>
+
+</section>
+
+<!-- footer Section -->
+
+</body>
+</html>
